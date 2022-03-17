@@ -14,6 +14,17 @@ for(let i = 0; i <= listaDeTeclas.length; i++){
         executaSom(idAudio);
 
     }
+
+    teclaMomento.onkeydown = function(){
+
+        teclaMomento.classList.add('ativa');
+
+    }
+    teclaMomento.onkeyup = function (){
+
+        teclaMomento.classList.remove('ativa');
+
+    }
            
 }
 
@@ -21,16 +32,6 @@ for(let i = 0; i <= listaDeTeclas.length; i++){
 function executaSom(idSom){
 
     document.querySelector(idSom).play();
-
+    
 }
 
-/*
-let contador = 0;
-
-while(contador <= listaDeTeclas.length){
-
-    listaDeTeclas[contador].onclick = executaSom;
-    contador++;
-
-}
-*/
