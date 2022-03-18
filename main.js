@@ -15,9 +15,14 @@ for(let i = 0; i <= listaDeTeclas.length; i++){
 
     }
 
-    teclaMomento.onkeydown = function(){
+    teclaMomento.onkeydown = function(evento){
 
-        teclaMomento.classList.add('ativa');
+        if(evento.code === "Enter" || evento.code === "Space"){
+
+            teclaMomento.classList.add('ativa');
+
+        }
+        
 
     }
     teclaMomento.onkeyup = function (){
@@ -29,9 +34,22 @@ for(let i = 0; i <= listaDeTeclas.length; i++){
 }
 
 //função que executa o som
-function executaSom(idSom){
+function executaSom(seletorAudio){
 
-    document.querySelector(idSom).play();
+
+    const elemento = document.querySelector(seletorAudio);
+
+    //elemento != null ou elemento, o javascript ja entende e verifica se a constante está nula ou sem tem algo
+    if(elemento && elemento.localName === 'audio'){
+
+          elemento.play();
+
+        
+    }
+    else{
+
+        console.log('Elemento não encontrado ou seletor inválido!');
+
+    }
     
 }
-
